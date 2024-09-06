@@ -18,6 +18,7 @@ app.get('/ping', (req, res) => {
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use(cors({origin: 'https://localhost:5173'}))
 
 app.use('/auth', AuthRouter);
 //app.use('/products', ProductRouter);
