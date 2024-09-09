@@ -9,7 +9,7 @@ require('dotenv').config();
 require('./Models/db');
 
 const PORT = process.env.PORT || 8080;
-
+app.use(cors({origin: '*'}))
 
 app.get('/ping', (req, res) => {
     res.send('PONG');
@@ -17,8 +17,8 @@ app.get('/ping', (req, res) => {
 
 
 app.use(bodyParser.json());
-app.use(cors());
-app.use(cors({origin: 'https://localhost:5173'}))
+
+
 
 app.use('/auth', AuthRouter);
 //app.use('/products', ProductRouter);
